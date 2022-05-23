@@ -41,7 +41,7 @@ class App extends Component {
 
     return (
       <div className="App">
-        <SearchBar className='searchBar' placeholder = 'Search Monsters' eventHandler = { onSearch }/>
+        <SearchBar className='monsters-search-box' placeholder = 'Search Monsters' eventHandler = { onSearch }/>
         <List monsters = { filteredList }/>
       </div>
     );

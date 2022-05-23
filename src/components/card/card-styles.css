@@ -1,0 +1,15 @@
+.card{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 7px;
+}
+
+/* .userPic{
+    
+} */
+
+.card > *{
+    margin: 7px;
+}
