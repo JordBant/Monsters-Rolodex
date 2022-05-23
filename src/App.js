@@ -1,5 +1,6 @@
 import { Component } from 'react';
 import List from './components/list/list-component'
+import SearchBar from "./components/search-bar/search-component";
 import './App.css';
 
 class App extends Component {
@@ -19,9 +20,6 @@ class App extends Component {
       return {
         monsters: users
       }
-    }, 
-    () => {
-      // console.log(this.state)
     }))
   }
 
@@ -36,31 +34,15 @@ class App extends Component {
   render(){
     const { monsters: monstersArr, targeted } = this.state
     const { onSearch } = this
+
     const filteredList = monstersArr.filter(monster => {
       return monster.name.toLocaleLowerCase().includes(targeted)
     })
 
-    console.log(filteredList)
-
     return (
       <div className="App">
-      <input 
-        type="text" 
-        className="search" 
-        placeholder='Search Monsters' 
-        onChange = { onSearch }
-      />
-
-      {
-        // filteredList.map(monster => {
-        //   return(
-        //     <div key={monster.id}>
-        //       <h1> {monster.name} </h1>
-        //     </div>
-        //   ) 
-        // })
-      }
-      <List />
+        <SearchBar className='searchBar' placeholder = 'Search Monsters' eventHandler = { onSearch }/>
+        <List monsters = { filteredList }/>
       </div>
     );
   }
