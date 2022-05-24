@@ -34,10 +34,10 @@ class App extends Component {
   render(){
     const { monsters: monstersArr, targeted } = this.state
     const { onSearch } = this
-
     const filteredList = monstersArr.filter(monster => {
       return monster.name.toLocaleLowerCase().includes(targeted)
     })
+    console.log('Here',filteredList)
 
     return (
       <div className="App">
